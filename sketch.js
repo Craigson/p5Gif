@@ -19,14 +19,17 @@ var recordButton;
 var playButton;
 
 function setup() {
+  
   cvs = createCanvas(640, 480);
-    record = false;
+  record = false;
 
   setupGif();
     
+    console.log("hello");
+    
     //ANIMATION CODE
     noStroke();
-  rectMode(CENTER);
+    rectMode(CENTER);
     
     //UI CODE
     recordButton = createButton('start recording');
@@ -113,7 +116,7 @@ function setupGif() {
   counter = 0;
   gif = new GIF({
     workers: 2,
-    quality: 80
+    quality: 50
   });
 
   gif.on('finished', function(blob) {
@@ -121,3 +124,4 @@ function setupGif() {
     setupGif();
   });
 }
+
